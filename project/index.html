@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noapara RS Work Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Development Mode Banner -->
+    <div id="dev-banner" class="dev-banner">
+        <div class="dev-banner-content">
+            <i class="fas fa-code"></i>
+            <span>Development Mode Active</span>
+            <button id="toggle-mode" class="mode-toggle">Switch to Live</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <i class="fas fa-train"></i>
+                <h1>Noapara RS Work Management</h1>
+            </div>
+            <div class="user-section">
+                <span class="user-name" id="current-user">Subhankar Dey (Junior Engineer)</span>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-section="jobs">
+                    <i class="fas fa-tasks"></i>
+                    <span>Job Management</span>
+                </a>
+                <a href="#" class="nav-item" data-section="staff">
+                    <i class="fas fa-users"></i>
+                    <span>Staff Management</span>
+                </a>
+                <a href="#" class="nav-item" data-section="compliance">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Compliance</span>
+                </a>
+                <a href="#" class="nav-item" data-section="reports">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <h2>Dashboard</h2>
+                    <p>Welcome to Noapara RS Work Management System</p>
+                </div>
+
+                <!-- Hierarchy Display -->
+                <div class="hierarchy-card">
+                    <h3>Organizational Hierarchy</h3>
+                    <div class="hierarchy-tree">
+                        <div class="hierarchy-level">
+                            <div class="position-card boss">
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>DY.CEE/RS/C</strong>
+                                    <span>Ramkrishna Chowdhury</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hierarchy-level">
+                            <div class="position-card">
+                                <i class="fas fa-bolt"></i>
+                                <div>
+                                    <strong>SEE/RS/NOA</strong>
+                                    <span>Sanjit Kr. Pramanick (Senior Electrical Engineer)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hierarchy-level">
+                            <div class="position-card">
+                                <i class="fas fa-user-tie"></i>
+                                <div>
+                                    <strong>SSE/PPO/RS/NOA</strong>
+                                    <span>Tapos Roy (Senior Section Engineer - Planning)</span>
+                                </div>
+                            </div>
+                            <div class="position-card">
+                                <i class="fas fa-user-tie"></i>
+                                <div>
+                                    <strong>SSE/PPO/RS/NOA</strong>
+                                    <span>Sanjay Kumar Mandal (Senior Section Engineer - Planning)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hierarchy-level sections">
+                            <div class="sections-grid">
+                                <div class="section-item">Shift Section</div>
+                                <div class="section-item">Mechanical Section</div>
+                                <div class="section-item">Door Section</div>
+                                <div class="section-item">Rotating Machine Section</div>
+                                <div class="section-item">Brake Section</div>
+                                <div class="section-item">Electronics Section</div>
+                                <div class="section-item">Ancillary Section</div>
+                                <div class="section-item">Control Gear Section</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <p>Active Jobs</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>156</h3>
+                            <p>Total Staff</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>18</h3>
+                            <p>Completed Jobs</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>6</h3>
+                            <p>Pending Reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Job Management Section -->
+            <section id="jobs" class="content-section">
+                <div class="section-header">
+                    <h2>Job Management</h2>
+                    <button class="btn btn-primary" id="create-job">
+                        <i class="fas fa-plus"></i>
+                        Create New Job
+                    </button>
+                </div>
+
+                <div class="jobs-grid">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Track Maintenance - Section 3</h3>
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                        <div class="job-details">
+                            <p><strong>Assigned to:</strong> Supervisor - Section 3</p>
+                            <p><strong>Due Date:</strong> 2025-01-20</p>
+                            <p><strong>Priority:</strong> High</p>
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                            <button class="btn btn-sm btn-primary">Update Status</button>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Signal Inspection - Section 1</h3>
+                            <span class="status-badge pending">Pending</span>
+                        </div>
+                        <div class="job-details">
+                            <p><strong>Assigned to:</strong> Supervisor - Section 1</p>
+                            <p><strong>Due Date:</strong> 2025-01-18</p>
+                            <p><strong>Priority:</strong> Medium</p>
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                            <button class="btn btn-sm btn-primary">Update Status</button>
+                        </div>
+                    </div>
+
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Platform Cleaning - Section 5</h3>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <div class="job-details">
+                            <p><strong>Assigned to:</strong> Supervisor - Section 5</p>
+                            <p><strong>Completed:</strong> 2025-01-15</p>
+                            <p><strong>Priority:</strong> Low</p>
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                            <button class="btn btn-sm btn-success">View Report</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staff Management Section -->
+            <section id="staff" class="content-section">
+                <div class="section-header">
+                    <h2>Staff Management</h2>
+                    <button class="btn btn-primary" id="add-staff">
+                        <i class="fas fa-user-plus"></i>
+                        Add Staff Member
+                    </button>
+                </div>
+
+                <div class="staff-sections">
+                    <div class="section-card">
+                        <div class="section-header-card">
+                            <h3>Section 1 - Track Maintenance</h3>
+                            <span class="staff-count">12 Staff Members</span>
+                        </div>
+                        <div class="staff-list">
+                            <div class="staff-member">
+                                <div class="staff-info">
+                                    <strong>Rajesh Kumar</strong>
+                                    <span>Track Maintainer</span>
+                                </div>
+                                <div class="staff-status available">Available</div>
+                            </div>
+                            <div class="staff-member">
+                                <div class="staff-info">
+                                    <strong>Amit Singh</strong>
+                                    <span>Helper</span>
+                                </div>
+                                <div class="staff-status booked">Booked</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-outline">Manage Section</button>
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-header-card">
+                            <h3>Section 2 - Signal & Telecom</h3>
+                            <span class="staff-count">8 Staff Members</span>
+                        </div>
+                        <div class="staff-list">
+                            <div class="staff-member">
+                                <div class="staff-info">
+                                    <strong>Pradeep Sharma</strong>
+                                    <span>Signal Maintainer</span>
+                                </div>
+                                <div class="staff-status available">Available</div>
+                            </div>
+                            <div class="staff-member">
+                                <div class="staff-info">
+                                    <strong>Suresh Yadav</strong>
+                                    <span>Technician</span>
+                                </div>
+                                <div class="staff-status available">Available</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-outline">Manage Section</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compliance Section -->
+            <section id="compliance" class="content-section">
+                <div class="section-header">
+                    <h2>Compliance Reports</h2>
+                    <button class="btn btn-primary" id="submit-compliance">
+                        <i class="fas fa-file-alt"></i>
+                        Submit Report
+                    </button>
+                </div>
+
+                <div class="compliance-grid">
+                    <div class="compliance-card">
+                        <div class="compliance-header">
+                            <h3>Track Maintenance Compliance</h3>
+                            <span class="compliance-status approved">Approved</span>
+                        </div>
+                        <div class="compliance-details">
+                            <p><strong>Job:</strong> Track Maintenance - Section 3</p>
+                            <p><strong>Submitted by:</strong> Section 3 Supervisor</p>
+                            <p><strong>Date:</strong> 2025-01-15</p>
+                            <p><strong>Comments:</strong> All maintenance work completed as per schedule. No issues found.</p>
+                        </div>
+                    </div>
+
+                    <div class="compliance-card">
+                        <div class="compliance-header">
+                            <h3>Signal Inspection Report</h3>
+                            <span class="compliance-status pending">Under Review</span>
+                        </div>
+                        <div class="compliance-details">
+                            <p><strong>Job:</strong> Signal Inspection - Section 1</p>
+                            <p><strong>Submitted by:</strong> Section 1 Supervisor</p>
+                            <p><strong>Date:</strong> 2025-01-16</p>
+                            <p><strong>Comments:</strong> Minor signal timing adjustment required. Will be completed by tomorrow.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports" class="content-section">
+                <div class="section-header">
+                    <h2>Reports & Analytics</h2>
+                    <button class="btn btn-primary" id="generate-report">
+                        <i class="fas fa-download"></i>
+                        Generate Report
+                    </button>
+                </div>
+
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Monthly Performance</h3>
+                        <div class="report-chart">
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                                <p>Performance trends for all sections</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Staff Utilization</h3>
+                        <div class="report-chart">
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-pie"></i>
+                                <p>Staff booking and availability statistics</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Job Completion Rate</h3>
+                        <div class="report-chart">
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-bar"></i>
+                                <p>Section-wise job completion analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h2>System Settings</h2>
+                    <p>Configuration options (Admin Access Only)</p>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="setting-card">
+                        <h3>Staff Database Management</h3>
+                        <p>Manage staff database in development mode</p>
+                        <button class="btn btn-outline" id="manage-staff-db">Manage Staff Database</button>
+                    </div>
+
+                    <div class="setting-card">
+                        <h3>User Management</h3>
+                        <p>Manage user roles and permissions</p>
+                        <button class="btn btn-outline">Manage Users</button>
+                    </div>
+
+                    <div class="setting-card">
+                        <h3>System Configuration</h3>
+                        <p>Configure system-wide settings</p>
+                        <button class="btn btn-outline">Configure</button>
+                    </div>
+
+                    <div class="setting-card">
+                        <h3>Backup & Restore</h3>
+                        <p>Manage system backups</p>
+                        <button class="btn btn-outline">Backup</button>
+                    </div>
+
+                    <div class="setting-card">
+                        <h3>Development Mode</h3>
+                        <p>Toggle between development and live modes</p>
+                        <div class="mode-controls">
+                            <label class="switch">
+                                <input type="checkbox" id="dev-mode-toggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span>Development Mode</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Job Creation -->
+    <div id="job-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Job</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="job-form">
+                    <div class="form-group">
+                        <label>Job Title</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Assign to Section</label>
+                        <select required>
+                            <option value="">Select Section</option>
+                            <option value="shift">Shift Section</option>
+                            <option value="mechanical">Mechanical Section</option>
+                            <option value="door">Door Section</option>
+                            <option value="rotating">Rotating Machine Section</option>
+                            <option value="brake">Brake Section</option>
+                            <option value="electronics">Electronics Section</option>
+                            <option value="ancillary">Ancillary Section</option>
+                            <option value="control">Control Gear Section</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select required>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Due Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Cancel</button>
+                <button class="btn btn-primary">Create Job</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="staff-database.js"></script>
+    <script src="staff-management.js"></script>
+    <script src="mobile-app.js"></script>
+</body>
+</html>
